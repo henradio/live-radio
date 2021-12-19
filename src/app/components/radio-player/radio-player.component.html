@@ -4,6 +4,11 @@
       <app-play-pause-button></app-play-pause-button>
       <app-volume-bar></app-volume-bar>
       <app-mute-button></app-mute-button>
+      <div *ngIf="nowPlaying">
+        {{nowPlaying?.id}}
+        {{nowPlaying?.name}}
+        {{nowPlaying?.now_playing?.song?.title}}
+      </div>
     </div>
     <!--  <DarkModeButton/>-->
   </div>
