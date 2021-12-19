@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  background: none;
+}
+
+.playerIconHolder {
+  width: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.playerIconHolder svg {
+  fill: currentColor;
+}
+
+.button_link {
+  margin-left: 8px;
+}
+
+.button_play svg {
+  width: 17px;
+  height: auto;
+}
+
+.button_pause svg {
+  width: 18px;
+  height: auto;
+}
+
