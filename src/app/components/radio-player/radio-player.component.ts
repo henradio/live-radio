@@ -3,7 +3,7 @@ import {StreamState} from "../../interfaces/stream-state";
 import {AudioService} from "../../services/audio.service";
 import {INowPlaying, AzuraCastApiService} from "../../api/azura-cast-api.service";
 
-const radioStreamUrl = 'https://stream.hen.radio:8000/radio.mp3';
+const radioStreamUrl = 'https://stream.hen.radio/radio/8000/radio.mp3';
 
 @Component({
   selector: 'app-radio-player',
