@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NowPlayingService } from './now-playing.service';
+import { AzuraCastApiService } from './azura-cast-api.service';
 
 describe('NowPlayingService', () => {
-  let service: NowPlayingService;
+  let service: AzuraCastApiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NowPlayingService);
+    service = TestBed.inject(AzuraCastApiService);
   });
 
   it('should be created', () => {

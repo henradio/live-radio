@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {StreamState} from "../../interfaces/stream-state";
 import {AudioService} from "../../services/audio.service";
-import {INowPlaying, NowPlayingService} from "../../api/now-playing.service";
+import {INowPlaying, AzuraCastApiService} from "../../api/azura-cast-api.service";
 
-const radioStreamUrl = 'https://live.hen.radio:8000/radio.mp3';
+const radioStreamUrl = 'https://stream.hen.radio:8000/radio.mp3';
 
 @Component({
   selector: 'app-radio-player',
@@ -16,7 +16,7 @@ export class RadioPlayerComponent implements OnInit {
 
   constructor(
     protected audioService: AudioService,
-    protected nowPlayingService: NowPlayingService
+    protected azuraCastApiService: AzuraCastApiService
   ) {
   }
 
@@ -32,7 +32,7 @@ export class RadioPlayerComponent implements OnInit {
   }
 
   fetchNowPlaying() {
-    this.nowPlayingService
+    this.azuraCastApiService
       .getNowPlayingById(1)
       .subscribe((nowPlaying) => {this.nowPlaying = nowPlaying});
   }

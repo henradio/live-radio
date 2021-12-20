@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 
 export interface INowPlaying {
@@ -12,16 +12,25 @@ export interface INowPlaying {
       art: string
     }
   }
+  [otherProperty: string]: any
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class NowPlayingService {
+export class AzuraCastApiService {
   constructor(private httpClient: HttpClient) {}
 
   getNowPlayingById(id: number): Observable<INowPlaying> {
     return this.httpClient.get<INowPlaying>(`https://stream.hen.radio/api/nowplaying/${id}`)
+      .pipe(
+        retry(1),
+        catchError(this.processError)
+      )
+  }
+
+  getScheduleById(id: number): Observable<INowPlaying> {
+    return this.httpClient.get<INowPlaying>(`https://stream.hen.radio/api/station/${id}/schedule?rows=100`)
       .pipe(
         retry(1),
         catchError(this.processError)
