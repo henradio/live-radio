@@ -3,11 +3,10 @@
 }
 
 .footerBar {
-
-  width: 90%;
-  max-width: 764px;
-  padding-top: 32px;
-  padding-bottom: 170px;
+  position: fixed;
+  right: 40px;
+  bottom: 120px;
+  text-align: right;
 }
 
 .footerTitle {
