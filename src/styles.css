@@ -8,7 +8,7 @@
   --light-grey: #bcbcc5;
   --dark-grey: #5b5b60;
   --darker-grey: #27272a;
-  --text: var(--black);
+  --text: var(--dark-grey);
   --border: var(--light-grey);
   --button-background: var(--white);
   --button-border: var(--black);
