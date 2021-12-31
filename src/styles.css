@@ -3,7 +3,7 @@
   --black: #141418;
   --blackAlpha: rgba(20, 20, 24, 0.75);
   --white: #faf7f6;
-  --logo: var(--black);
+  --logo: var(--white);
   --lighter-grey: #dcdce8;
   --light-grey: #bcbcc5;
   --dark-grey: #5b5b60;
