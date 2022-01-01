@@ -66,15 +66,31 @@
 }
 
 .gif-box {
-  margin: auto;
-  padding-top: 10%;
   width: 50%;
   padding: 10px;
+  padding-top: 40%;
 }
 
 .gif {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 200%;
+}
+
+@media screen and (min-width: 600px) {
+
+  .gif-box {
+    margin: auto;
+    padding-top: 10%;
+    width: 50%;
+    padding: 10px;
+  }
+
+ .gif {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+}
 }
