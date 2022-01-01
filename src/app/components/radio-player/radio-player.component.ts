@@ -5,6 +5,8 @@ import {INowPlaying, AzuraCastApiService} from "../../api/azura-cast-api.service
 
 const radioStreamUrl = 'https://stream.hen.radio/radio/8000/radio.mp3';
 
+let nowPlayingTimeout;
+
 @Component({
   selector: 'app-radio-player',
   templateUrl: './radio-player.component.html',
@@ -22,6 +24,14 @@ export class RadioPlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchNowPlaying();
+    setInterval(() => {
+      this.fetchNowPlaying();
+    },30000);
+    
+    setInterval(() => {
+    window.location.reload();
+    },3600000)
+
     this.audioService.playStream(radioStreamUrl).subscribe(events => {
       // console.log('Events :::', events);
     });
@@ -32,8 +42,11 @@ export class RadioPlayerComponent implements OnInit {
   }
 
   fetchNowPlaying() {
+    // seems the subscribe is not working
+    // https://docs.azuracast.com/en/developers/apis/now-playing-data
     this.azuraCastApiService
       .getNowPlayingById(1)
-      .subscribe((nowPlaying) => {this.nowPlaying = nowPlaying});
+      .subscribe((nowPlaying) => {
+        this.nowPlaying = nowPlaying});
   }
 }
