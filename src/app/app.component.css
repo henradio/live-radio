@@ -21,7 +21,7 @@
 
 .splash {
   height: 100vh;
-  padding: 100px 20px 140px;
+  padding: 70px 20px 140px;
 }
 
 .rainbow {
@@ -31,7 +31,8 @@
 }
 
 .black-and-white {
-  background-image:linear-gradient(to left, #000000 0% 33%, #ffffff 33% 66%, #000000 66% 100%);
+  background-image: url("/assets/img/bgr_3_solo_2a.png")
+  /*background-image:linear-gradient(to left, #000000 0% 33%, #ffffff 33% 66%, #000000 66% 100%);*/
   /*background-size: 400% 400%;*/
   /*animation: gradient 15s ease infinite;*/
 }
@@ -65,76 +66,38 @@
 }
 
 .gif-box {
-  width: 25%;
-  padding: 10px 20px 30px 10px;
-  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.15);
-  background: var(--white);
-  min-width: 340px;
-  min-height: 200px;
+  width: 50%;
+  padding: 10px;
 }
 
-@media screen and (min-width: 800px) {
-  .navBar {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-  }
+.gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200%;
+}
 
-  .navBar_link {
-    margin-left: 24px;
+@media screen and (max-width: 600px) {
+  .gif-box {
+    width: 50%;
+    padding: 10px;
+    padding-top: 0%;
   }
+}
 
-  .title-box {
-    position: absolute;
-    top: 8%;
-    left: 44%;
-    width: 33%;
-    padding: 80px 60px 30px 80px;
-    min-width: 300px;
-    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.15);
-    background: var(--white);
-  }
-
-  .title {
-    text-transform: uppercase;
-    font-size: 42px;
-    color: var(--black);
-    margin: 0;
-    padding: 0;
-  }
-
-  .event-box {
-    position: absolute;
-    top: 33%;
-    right: 54%;
-    width: 25%;
-    padding: 40px 60px 80px 40px;
-    min-width: 260px;
-    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.15);
-    background: var(--white);
-  }
+@media screen and (min-width: 1000px) {
 
   .gif-box {
-    position: absolute;
-    top: 40%;
-    right: 14%;
-    width: 25%;
-    padding: 10px 20px 30px 10px;
-    min-width: 340px;
-    min-height: 240px;
-    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.15);
-    background: var(--white);
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    padding-top: 0%;
   }
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+ .gif {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80%;
+}
 }
