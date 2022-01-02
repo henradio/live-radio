@@ -2,34 +2,34 @@
   margin-top: auto;
 }
 
+p {
+  margin: 0px;
+}
+
 .footerBar {
   position: fixed;
   right: 40px;
   bottom: 120px;
-  text-align: right;
   background-color: white;
+  font-size: 12px;
 }
 
 .footerTitle {
-  font-size: 9px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin:23px 0px 6px 0px;
+}
+
+.footerNames {
+  font-weight: 700;
 }
 
 .footerText {
-  font-size: 9px;
   color: var(--dark-grey);
 }
 
-@media screen and (min-width: 600px) {
   .footerBar {
-    padding: 20px;
+    padding: 0px 25px 23px;
     background-color: white;
   }
 
-  .footerTitle {
-    font-size: 12px;
-  }
-
-  .footerText {
-    font-size: 12px;
-  }
-}
