@@ -25,7 +25,7 @@ export class AudioService {
   private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
     this.state
   );
-
+  
   private updateStateEvents(event: Event): void {
     switch (event.type) {
       case "canplay":
@@ -95,6 +95,10 @@ export class AudioService {
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
+      navigator.connection.addEventListener('change', (e) => {
+        this.audioObj.load();
+        this.audioObj.play();
+      });
 
       const handler = (event: Event) => {
         this.updateStateEvents(event);
