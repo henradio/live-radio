@@ -171,7 +171,7 @@ export class AudioService {
     this.resetState();
     this.stop$.next(false);
     this.playStream('https://stream.hen.radio/radio/8000/radio.mp3').subscribe(events => {
-      //console.log('Events :::', events);
+      //console.log('Events ::', events);
    });
   }
   }
