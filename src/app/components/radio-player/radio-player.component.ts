@@ -24,6 +24,11 @@ export class RadioPlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchNowPlaying();
+
+    setInterval(() => {
+      this.audioService.testConnection()
+    },5000);
+
     setInterval(() => {
       this.fetchNowPlaying();
     },30000);
@@ -36,7 +41,6 @@ export class RadioPlayerComponent implements OnInit {
       // console.log('Events :::', events);
     });
     this.audioService.getState().subscribe(state => {
-      // console.log('State :::', state);
       this.state = state;
     });
   }

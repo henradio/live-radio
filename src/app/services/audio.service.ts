@@ -54,7 +54,7 @@ export class AudioService {
         this.state.error = true;
         break;
       default:
-        console.log('Unhandled Event :::', event)
+        //console.log('Unhandled Event :::', event)
     }
     this.stateChange.next(this.state);
   }
@@ -95,11 +95,6 @@ export class AudioService {
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
-      navigator.connection.addEventListener('change', (e) => {
-        this.audioObj.load();
-        this.audioObj.play();
-      });
-
       const handler = (event: Event) => {
         this.updateStateEvents(event);
         observer.next(event);
@@ -168,5 +163,16 @@ export class AudioService {
     const minutes = ~~(time / 60);
     const seconds = time - minutes * 60;
     return `${minutes}.${AudioService.pad(~~seconds, 2)}`;
+  }
+
+  testConnection() {
+  if ((this.state.currentTime == this.audioObj.currentTime) && this.state.playing ) {
+    this.stop();
+    this.resetState();
+    this.stop$.next(false);
+    this.playStream('https://stream.hen.radio/radio/8000/radio.mp3').subscribe(events => {
+      //console.log('Events :::', events);
+   });
+  }
   }
 }
